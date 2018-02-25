@@ -1,0 +1,8 @@
+
+
+- name: Deploying a Elastic server
+  hosts: elastic
+
+  roles:
+    - ansible-role-elastic-server
+

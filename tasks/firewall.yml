@@ -1,0 +1,10 @@
+
+---
+
+  - name: Opening firewall ports
+    lineinfile:
+      dest: "{{ susefw_config }}"
+      regexp: "^#?FW_SERVICES_ACCEPT_EXT"
+      line: "FW_SERVICES_ACCEPT_EXT=\"{{ network }},tcp,5601 {{ network }},tcp,9200\""
+    notify: Restart firewall
+

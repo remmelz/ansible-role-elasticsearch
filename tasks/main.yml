@@ -1,0 +1,8 @@
+
+---
+
+  - import_tasks: "elastic-install.yml"
+  - import_tasks: "elastic-configure.yml"
+  - import_tasks: "kibana-install.yml"
+  - import_tasks: "kibana-configure.yml"
+  - import_tasks: "firewall.yml"

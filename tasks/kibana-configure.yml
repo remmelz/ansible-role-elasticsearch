@@ -1,0 +1,17 @@
+
+---
+
+  - name: Set listen port to default
+    lineinfile:
+      dest: "/etc/kibana/kibana.yml"
+      regexp: "^#?server.host"
+      line: "server.host: \"0.0.0.0\""
+    notify: Restart kibana
+
+  - name: Starting kibana
+    systemd:
+      name: kibana
+      state: started
+      enabled: yes
+
+

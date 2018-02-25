@@ -1,0 +1,8 @@
+
+---
+
+  - name: Starting elasticsearch
+    systemd:
+      name: elasticsearch
+      state: started
+      enabled: yes

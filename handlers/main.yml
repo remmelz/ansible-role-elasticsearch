@@ -1,0 +1,12 @@
+---
+
+  - name: Restart kibana
+    service:
+      name: kibana
+      state: restarted
+
+  - name: Restart firewall
+    service:
+      name: SuSEfirewall2
+      state: restarted
+

@@ -1,0 +1,11 @@
+
+---
+
+  elastic_rpm  : "elasticsearch-6.2.2.rpm"
+  elastic_repo : "https://artifacts.elastic.co/downloads/elasticsearch"
+
+  kibana_rpm  : "kibana-6.2.2-x86_64.rpm"
+  kibana_repo : "https://artifacts.elastic.co/downloads/kibana"
+
+  susefw_config: "/etc/sysconfig/SuSEfirewall2"
+  network      : "192.168.1.0/24"
