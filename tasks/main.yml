@@ -1,8 +1,21 @@
 
 ---
 
-  - import_tasks: "elastic-install.yml"
-  - import_tasks: "elastic-configure.yml"
-  - import_tasks: "kibana-install.yml"
-  - import_tasks: "kibana-configure.yml"
-  - import_tasks: "firewall.yml"
+  - import_tasks: download-elastic.yml
+  - import_tasks: download-kibana.yml
+
+  - name: Installing Elasticsearch on SuSE
+    import_tasks: ./suse/install-elastic.yml
+    import_tasks: ./suse/install-kibana.yml
+    import_tasks: ./suse/configure-firewall.yml
+    when: ansible_os_family|lower == 'suse'
+
+  - name: Installing Elasticsearch on RedHat
+    import_tasks: ./redhat/install-elastic.yml
+    import_tasks: ./redhat/install-kibana.yml
+    when: ansible_os_family|lower == 'redhat'
+
+  - import_tasks: configure-elastic.yml
+  - import_tasks: configure-kibana.yml
+
+

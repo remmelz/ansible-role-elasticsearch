@@ -1,0 +1,15 @@
+
+---
+
+  - name: Installing Java11 openJDK
+    yum: name=java-11-openjdk state=present
+
+  - name: Installing Simple insserv
+    yum: name=insserv-compat state=present
+
+  - name: Installing the Elasticsearch RPM
+    yum:
+      name: /var/tmp/{{ elastic_rpm }}
+      disable_gpg_check: yes
+      state: present
+

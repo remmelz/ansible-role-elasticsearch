@@ -1,0 +1,13 @@
+
+  - name: Checking for Kibana RPM
+    stat:
+      path: /var/tmp/{{ rpm_kibana }}
+    register: result
+
+  - name: Downloading the Kibana RPM
+    get_url:
+      url: "{{ repo_kibana }}/{{ rpm_kibana }}"
+      dest: /var/tmp/
+      mode: 0440
+    when: result.stat.exists == False
+

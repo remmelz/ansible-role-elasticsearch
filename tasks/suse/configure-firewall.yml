@@ -1,7 +1,7 @@
 
 ---
 
-  - name: Opening firewall ports
+  - name: Opening Firewall ports
     lineinfile:
       dest: "{{ susefw_config }}"
       regexp: "^#?FW_SERVICES_ACCEPT_EXT"
