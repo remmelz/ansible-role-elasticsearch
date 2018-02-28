@@ -1,0 +1,29 @@
+
+---
+
+  - name: Enable firewalld
+    service:
+      name: firewalld
+      state: started
+      enabled: yes
+
+  - name: Opening Kibana firewall port 5601
+    firewalld:
+      port: 5601/tcp
+      zone: public
+      permanent: true
+      state: enabled
+
+  - name: Opening Elasticsearch firewall port 9200
+    firewalld:
+      port: 9200/tcp
+      zone: public
+      permanent: true
+      state: enabled
+
+  - name: Restarting firewalld
+    service:
+      name: firewalld
+      state: restarted
+
+

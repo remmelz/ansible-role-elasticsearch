@@ -1,6 +1,8 @@
 
 ---
 
+  network      : "192.168.1.0/24"
+
   rpm_elastic  : "elasticsearch-6.2.2.rpm"
   rpm_kibana   : "kibana-6.2.2-x86_64.rpm"
 

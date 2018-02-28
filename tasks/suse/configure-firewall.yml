@@ -1,10 +1,21 @@
 
 ---
 
+  - name: Enabling SuSE firewall
+    systemd:
+      name: SuSEfirewall2
+      enabled: yes
+      state: started
+
   - name: Opening Firewall ports
     lineinfile:
       dest: "{{ susefw_config }}"
       regexp: "^#?FW_SERVICES_ACCEPT_EXT"
       line: "FW_SERVICES_ACCEPT_EXT=\"{{ network }},tcp,5601 {{ network }},tcp,9200\""
-    notify: Restart firewall
+
+  - name: Restarting SuSE firewall
+    systemd:
+      name: SuSEfirewall2
+      state: restarted
+
 

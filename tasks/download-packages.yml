@@ -1,0 +1,10 @@
+
+---
+
+  - name: Downloading Elasticsearch RPM file
+    shell: wget -P /var/tmp -nc {{ repo_elastic }}/{{ rpm_elastic }}
+
+  - name: Downloading Kibana RPM file
+    shell: wget -P /var/tmp -nc {{ repo_kibana }}/{{ rpm_kibana }}
+
+

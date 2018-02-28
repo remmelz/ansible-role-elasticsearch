@@ -1,15 +1,17 @@
 
 ---
 
-  - name: Installing Java11 openJDK
-    zypper: name=java-11-openjdk state=present
-
-  - name: Installing Simple insserv
-    zypper: name=insserv-compat state=present
+  - name: Installing requirements
+    zypper:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - insserv-compat
+      - java-11-openjdk
 
   - name: Installing the Elasticsearch RPM
     zypper:
-      name: /var/tmp/{{ elastic_rpm }}
+      name: /var/tmp/{{ rpm_elastic }}
       disable_gpg_check: yes
       state: present
 

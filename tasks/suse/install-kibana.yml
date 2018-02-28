@@ -1,9 +1,9 @@
 
 ---
 
-  - name: Installing the kibana rpm file
+  - name: Installing the Kibana RPM file
     zypper:
-      name: /var/tmp/{{ kibana_rpm }}
+      name: /var/tmp/{{ rpm_kibana }}
       disable_gpg_check: yes
       state: present
 

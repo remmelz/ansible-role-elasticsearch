@@ -1,7 +1,7 @@
 
 ---
 
-  - name: Starting elasticsearch
+  - name: Starting Elasticsearch
     systemd:
       name: elasticsearch
       state: started

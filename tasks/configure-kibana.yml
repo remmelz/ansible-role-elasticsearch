@@ -6,9 +6,9 @@
       dest: "/etc/kibana/kibana.yml"
       regexp: "^#?server.host"
       line: "server.host: \"0.0.0.0\""
-    notify: Restart kibana
+    notify: Restart Kibana
 
-  - name: Starting kibana
+  - name: Starting Kibana
     systemd:
       name: kibana
       state: started
