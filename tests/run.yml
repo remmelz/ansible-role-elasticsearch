@@ -1,7 +1,7 @@
 
 
 - name: Deploying a Elastic server
-  hosts: elastic
+  hosts: elastic-server
 
   roles:
     - ansible-role-elasticsearch

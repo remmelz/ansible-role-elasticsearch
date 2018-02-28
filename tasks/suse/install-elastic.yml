@@ -7,7 +7,7 @@
       state: present
     with_items:
       - insserv-compat
-      - java-11-openjdk
+      - java-1_8_0-openjdk
 
   - name: Installing the Elasticsearch RPM
     zypper:
