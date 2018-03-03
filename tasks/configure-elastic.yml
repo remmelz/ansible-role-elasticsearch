@@ -1,6 +1,13 @@
 
 ---
 
+  - name: Set listening port to 0.0.0.0
+    lineinfile:
+      dest: "/etc/elasticsearch/elasticsearch.yml"
+      regexp: "^#network.host:"
+      line: "network.host: 0.0.0.0"
+    notify: Restart Elasticsearch
+
   - name: Starting Elasticsearch
     systemd:
       name: elasticsearch
